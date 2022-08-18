@@ -36,8 +36,8 @@ function LoginForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>username</Form.Label>
-        <Form.Control type="text" placeholder="username" name="username" required/>
+        <Form.Label>Addmin name</Form.Label>
+        <Form.Control type="text" placeholder="Addmin name" name="username" required autoComplete='off'/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">

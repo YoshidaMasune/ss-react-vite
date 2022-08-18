@@ -7,8 +7,7 @@ function Login() {
   return (
     <div>
       <NavBar />
-
-      <div className="container-lg">
+      <div className="container-sm">
          <LoginForm />
       </div>
     </div>

@@ -20,7 +20,7 @@ function home() {
                 <h3>{user.user.first_name}</h3>
               </div>
             )
-      
+
           })
         }
      

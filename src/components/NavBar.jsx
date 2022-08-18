@@ -12,10 +12,11 @@ function NavBar() {
             <Navbar.Toggle aria-controls="menu-list">
                <ImArrowDown />
             </Navbar.Toggle>
-            <Navbar.Collapse>
-               <Nav>
+            <Navbar.Collapse id='menu-list'>
+               <Nav className='ms-auto'>
                   <Nav.Link as={Link} to="/">รายชื่อสมาชิก</Nav.Link>
-                  <Nav.Link as={Link} to="/login">addmin loin</Nav.Link>
+                  <Nav.Link as={Link} to="/login">login</Nav.Link>
+                  <Nav.Link as={Link} to="/addmin">addmin</Nav.Link>
                   <NavDropdown title="">
                      <NavDropdown.Item as={Link} to='/addmin/miter' >จดค่าไฟ</NavDropdown.Item>
                      <NavDropdown.Item href="">แก้ขรายชื่อ</NavDropdown.Item>
