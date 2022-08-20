@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Foor from '../components/user_All/Foor';
 
 function home() {
   const [ users, setUsers ] = useState([])
@@ -11,19 +12,8 @@ function home() {
   if (users) console.log(users)
   return (
     <>
-      <div className="container">
-        {
-          users.map(user => {
-
-            return(
-              <div className="card" key={user._id}>
-                <h3>{user.user.first_name}</h3>
-              </div>
-            )
-
-          })
-        }
-     
+      <div className="container-sm">
+        <Foor users={users} />
       </div>
     </>
   )
