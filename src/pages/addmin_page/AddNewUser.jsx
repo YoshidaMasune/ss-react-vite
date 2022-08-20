@@ -74,9 +74,7 @@ function AddNewUser() {
           alert('has 1 user')
         }
       })
-    
     inp_effect();
-
   }
   return (
     <>
@@ -86,18 +84,18 @@ function AddNewUser() {
           <Row>
             <Form.Group as={Col}>
               <Form.Label>ชื่อ</Form.Label>
-              <Form.Control onChange={(e) => setFirst_name(e.target.value)} type='text' name='first_name' value={first_name} required/>
+              <Form.Control onChange={(e) => setFirst_name(e.target.value)} type='text' name='first_name' value={first_name} autoComplete="off" required/>
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>สกุล</Form.Label>
-              <Form.Control onChange={(e) => setLast_name(e.target.value)} type='text' name='last_name' value={last_name} required/>
+              <Form.Control onChange={(e) => setLast_name(e.target.value)} type='text' name='last_name' value={last_name} autoComplete="off" required/>
             </Form.Group>
           </Row>
          
          <Row>
           <Form.Group as={Col} md='4'>
               <Form.Label>ฉายา</Form.Label>
-              <Form.Control onChange={(e) => setJaya(e.target.value)} type='text' value={jaya} name='jaya'/>
+              <Form.Control onChange={(e) => setJaya(e.target.value)} type='text' value={jaya} name='jaya' autoComplete='off' />
             </Form.Group>
             <Form.Group as={Col} md='3'>
               <Form.Label>internet</Form.Label>
@@ -148,7 +146,6 @@ function AddNewUser() {
               <button type='submit' className='btn btn-success float-end'>add</button>
             </Form.Group>
           </Row>
-       
         </Form.Group>
         </Form>
       </div>

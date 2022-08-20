@@ -6,6 +6,7 @@ import Section from './Section'
 function Foor(props) {
    const users = props.users;
    const userSort = users.sort((a, b) => a.room - b.room)
+
    const [foor, setFoor] = useState(1)
    users.map( u=> {
       if (u.foor !== foor){
@@ -40,9 +41,6 @@ function Foor(props) {
             
          </div>
       </>
-  
-
-    
   )
 }
 

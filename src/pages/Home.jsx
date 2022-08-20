@@ -19,8 +19,8 @@ function home() {
   const S2 = users.filter(u => u.section === 2)
   return (
     <Container>
-      <Form.Group className='float-end mt-2' style={{width: "130px"}}>
-        <Form.Label>ชั้น</Form.Label>
+      <Form.Group className='float-end mt-2 text-center' style={{width: "130px"}}>
+        <Form.Label>สุวรรณเสน</Form.Label>
         <Form.Select onChange={(e) => setSection(Number(e.target.value))} name="section" id="section" size='sm' value={section}>
           <option value={1}>1</option>
           <option value={2}>2</option>
