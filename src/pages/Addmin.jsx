@@ -27,7 +27,7 @@ function Addmin() {
   return (
     <div>
       <NavBar />
-      <h3>addmin page</h3>
+      
     </div>
   )
 }

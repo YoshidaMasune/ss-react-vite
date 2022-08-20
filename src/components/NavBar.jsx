@@ -18,9 +18,8 @@ function NavBar() {
                   <Nav.Link as={Link} to="/login">login</Nav.Link>
                   <Nav.Link as={Link} to="/addmin">addmin</Nav.Link>
                   <NavDropdown title="">
-                     <NavDropdown.Item as={Link} to='/addmin/miter' >จดค่าไฟ</NavDropdown.Item>
-                     <NavDropdown.Item href="">แก้ขรายชื่อ</NavDropdown.Item>
-                     <NavDropdown.Item href="">เพิ่มสมาชิก</NavDropdown.Item>
+                     <NavDropdown.Item as={Link} to='/addmin/update' >จดค่าไฟ</NavDropdown.Item>
+                     <NavDropdown.Item as={Link} to='/addmin/create'>เพิ่มสมาชิก</NavDropdown.Item>
                   </NavDropdown>                 
                </Nav>
             </Navbar.Collapse>
