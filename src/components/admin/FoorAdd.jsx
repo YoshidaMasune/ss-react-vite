@@ -22,7 +22,7 @@ function FoorAdd(props) {
             <thead>
                <tr>
                   <th>ชั้น {foor}</th>
-                  <th>ปัจจุบัน</th>
+                  <th className='text-start'>ปัจจุบัน</th>
                </tr>
             </thead>
 

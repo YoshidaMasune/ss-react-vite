@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Table } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 import Room from './Room';
 import Section from './Section'
 
@@ -19,11 +19,10 @@ function Foor(props) {
    return (
       <>
          <div className="container ">
-            <Table>
+            <Table striped>
                <thead>
                   <tr>
-                     <th>ชั้น {foor}</th>
-                     <th></th>
+                     <th colSpan={2}>ชั้น {foor}</th>
                      <th>จ่าย</th>
                   </tr>
                </thead>

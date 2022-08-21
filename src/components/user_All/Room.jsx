@@ -1,14 +1,29 @@
-import React from 'react'
-import { ListGroup } from 'react-bootstrap'
+import React, { useContext, useEffect, useState } from 'react'
+import { MonthContext } from '../../pages/Home';
+
 function Room(props) {
   const {user} = props
+  const month = useContext(MonthContext)
 
+  console.log(month);
+
+  const lastMonth = user.miter.filter(miter => {
+    if (new Date(miter.date).getMonth() === month){
+      return miter
+    }
+  }).sort((a, b) => b.miter - a.miter)
     return (
       <>
         <tr>
           <td><strong>ห้อง</strong> {user.room}</td>
-          <td>{user.user.first_name}</td>
-          <td>{332}</td>
+          <td className='text-start'>{user.user.first_name}</td>
+          <td>
+              {
+                lastMonth.length === 0 ?  0:
+                user.user.internet ? (lastMonth[0].miter - lastMonth[1].miter) *6+ (20) + 110:
+                (lastMonth[0].miter - lastMonth[1].miter) *6+ (20)
+              }
+          </td>
         </tr>
       </>
     )

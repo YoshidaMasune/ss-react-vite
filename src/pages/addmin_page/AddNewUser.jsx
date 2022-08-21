@@ -75,6 +75,8 @@ function AddNewUser() {
         }
       })
     inp_effect();
+
+    e.target.miter.value = null
   }
   return (
     <>
@@ -140,7 +142,7 @@ function AddNewUser() {
           <Row>
             <Form.Group style={{width: "200px"}}>
               <Form.Label>miter</Form.Label>
-              <Form.Control onChange={(e) => setMiter(e.target.value)} type='number' value={miter} name='miter' required/>
+              <Form.Control onChange={(e) => setMiter(Number(e.target.value))} type='number' name='miter' required/>
             </Form.Group>
             <Form.Group>
               <button type='submit' className='btn btn-success float-end'>add</button>
