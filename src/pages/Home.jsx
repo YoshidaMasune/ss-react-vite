@@ -11,7 +11,7 @@ function home() {
   const [month, setMonth] = useState(new Date().getMonth())
   const months_th = [ "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม", ]
   useEffect( () => {
-    fetch('http://localhost:1234/users')
+    fetch('http://localhost:1234')
       .then(res => res.json()) 
       .then(data => setUsers(data))
   }, [])

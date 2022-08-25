@@ -1,7 +1,6 @@
 import React from 'react'
 import { ListGroup, Table } from 'react-bootstrap'
 import Foor from './Foor'
-import Room from './Room'
 
 function Section(props) {
    const { users } = props

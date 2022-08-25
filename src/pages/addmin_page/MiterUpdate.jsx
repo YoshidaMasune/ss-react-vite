@@ -27,7 +27,7 @@ function MiterUpdate() {
       }
     }),
 
-    fetch('http://localhost:1234/users')
+    fetch('http://localhost:1234')
     .then(res => res.json())
     .then(data => setUsers(data))
   }, [])

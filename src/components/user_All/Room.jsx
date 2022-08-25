@@ -3,17 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { MonthContext } from '../../pages/Home';
 
 const CalMiter = (lm, bm) => {
-
-  console.log(lm, bm);
-  if (lm.length == 1 && bm.length >= 1){
-    console.log("b-m  ",lm[0].miter - bm[0].miter)
-    return (lm[0].miter - bm[0].miter) * 6
-  }else if (lm.length > 1 && bm.length === 0) {
+  if (lm.length > 1){
     return (lm[0].miter - lm[1].miter) * 6
-  }else if (bm.length > 1 && lm.length === 0){
-    return (bm[0].miter - bm[1].miter) * 6
+  }else if (lm.length === 1 && bm.length > 0){
+    return lm[0].miter  - bm[0].miter
   }else{
-    return
+    return 0
   }
 }
 
@@ -27,12 +22,20 @@ function Room(props) {
   
   // DEBUGGING 
 
+  console.log(bm);
+  console.log(lm)
+  console.log(month)
   // end DEBUGGING
 
   useEffect(() => {
-    setBm(user.miter.filter(miter => (new Date(miter.date).getMonth() === (month - 1))).reverse())
+    if (month == 0){
+      console.log('rte');
+      setBm(user.miter.filter(miter => (new Date(miter.date).getMonth() === 11)).reverse())
+    }else{
+      setBm(user.miter.filter(miter => (new Date(miter.date).getMonth() === (month - 1))).reverse())
+    }
     setLm(user.miter.filter(miter => (new Date(miter.date).getMonth() === month)).reverse())
-  }, [])
+  }, [month])
   const toUser = () => {
     navto({
       pathname: '/user',
@@ -41,9 +44,7 @@ function Room(props) {
   }       
   useEffect(() => {
     setPrice(CalMiter(lm, bm))
-  }, [lm])
-  console.log(bm);
-  console.log(price);
+  }, [month, lm, bm])
   
   return (
     <>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import Room from './Room';
-import Section from './Section'
 
 function Foor(props) {
    const users = props.users;
@@ -24,6 +23,7 @@ function Foor(props) {
                   <tr>
                      <th colSpan={2}>ชั้น {foor}</th>
                      <th>จ่าย</th>
+                     <th>เลข</th>
                   </tr>
                </thead>
 

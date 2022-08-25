@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function RoomAdd(props) {
    const {user} = props
    const [miter, setMiter] = useState()
-
-   const senData = async () => {
+   const [lm, setLm] = useState(0)
+   const senData = async (e) => {
       const data = {
          _id: user._id,
          miter: miter
@@ -16,16 +16,19 @@ function RoomAdd(props) {
          },
          body: JSON.stringify(data)
       })
-      
-      document.getElementById('miter').value = null
+      setMiter(null)
    }
+
+   useEffect( () => {
+      setLm(user.miter.filter(miter => (new Date(miter.date).getMonth(miter.date) === new Date().getMonth())).reverse())
+   }, [])
 
   return (
    <>
    <tr>
       <td>ห้อง{user.room}</td>
       <td>
-         <input id='miter' className='form-control form-control-sm' onChange={(e) => setMiter(Number(e.target.value))}  type='number' />
+         <input id='miter' className='form-control form-control-sm' onChange={(e) => setMiter(Number(e.target.value))} placeholder={ lm? lm[0].miter: 0} type='number' />
       </td>
       <td>
          <button onClick={senData} className='btn btn-primary btn-sm'>ตกลง</button>
