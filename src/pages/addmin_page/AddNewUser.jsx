@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 import NavBar from '../../components/NavBar'
+import { Link } from 'react-router-dom'
 
 function AddNewUser() {
 
@@ -82,6 +83,7 @@ function AddNewUser() {
     <>
       <NavBar />
       <div className="container-sm mt-3">
+        <Link className='btn btn-primary btn-sm mb-2' to='/admin'>ย้อนกลับ</Link>
         <Form onSubmit={form_handle}>
           <Row>
             <Form.Group as={Col}>

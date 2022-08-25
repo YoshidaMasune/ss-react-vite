@@ -16,20 +16,16 @@ function RoomAdd(props) {
          },
          body: JSON.stringify(data)
       })
-
-      console.log(miter);
-
-      setMiter(0)
+      
+      document.getElementById('miter').value = null
    }
 
   return (
    <>
    <tr>
       <td>ห้อง{user.room}</td>
-      <td className=''>
-         <form>
-            <input className='form-control form-control-sm' onChange={(e) => setMiter(Number(e.target.value))} type='number' />
-         </form>
+      <td>
+         <input id='miter' className='form-control form-control-sm' onChange={(e) => setMiter(Number(e.target.value))}  type='number' />
       </td>
       <td>
          <button onClick={senData} className='btn btn-primary btn-sm'>ตกลง</button>

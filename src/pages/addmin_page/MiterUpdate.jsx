@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import { Form, Table } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import SectionAdd from '../../components/admin/SectionAdd'
 import NavBar from '../../components/NavBar'
 
@@ -38,14 +39,20 @@ function MiterUpdate() {
     <>
       <NavBar />
       
-      <div className="container">
-        <Form.Group className='float-end mt-2 text-center' style={{width: "130px"}}>
-          <Form.Label>สุวรรณเสน</Form.Label>
-          <Form.Select onChange={(e) => setSection(Number(e.target.value))} name="section" id="section" size='sm' value={section}>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-          </Form.Select>
-        </Form.Group>
+      <div className="container mt-4">
+        <Row>
+        <Form.Group as={Col}>
+            <Form.Label className="btn btn-primary btn-sm" as={Link} to='/admin'>admin</Form.Label>
+          </Form.Group>
+          <Form.Group as={Col} className='float-end text-center' style={{width: "130px"}}>
+            <Form.Label>สุวรรณเสน</Form.Label>
+            <Form.Select onChange={(e) => setSection(Number(e.target.value))} name="section" id="section" size='sm' value={section}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+            </Form.Select>
+          </Form.Group>
+        </Row>
+             
         { section === 1 ? <SectionAdd users={S1} />: <SectionAdd users={S2} />}
       </div>
     </>

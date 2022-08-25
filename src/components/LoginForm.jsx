@@ -23,7 +23,7 @@ function LoginForm() {
          if (data.status === 'login'){  
             alert('login success')
             localStorage.setItem('token', data.token)
-            window.location = '/addmin'
+            window.location = '/admin'
           
          }else{
             alert('login faild')
@@ -36,7 +36,7 @@ function LoginForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Addmin name</Form.Label>
+        <Form.Label>Admin name</Form.Label>
         <Form.Control type="text" placeholder="Addmin name" name="username" required autoComplete='off'/>
       </Form.Group>
 
